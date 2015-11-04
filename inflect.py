@@ -12,7 +12,9 @@
 # More information on HFST and the installation guidelines can
 # be found at: https://kitwiki.csc.fi/twiki/bin/view/KitWiki/HfstHome
 
-import os, sys, re, libhfst
+import os, sys, 
+import re 
+import libhfst
 from itertools import ifilterfalse as ffilter
 
 datadir = "./morphology_sets/"
@@ -27,16 +29,8 @@ synthetiser = libhfst.HfstTransducer(istr2)
 
 def main():
 
-    a1 = u'[BOUNDARY=LEXITEM][LEMMA=\'snautseri\'][POS=NOUN][KTN=6][NUM=PL][CASE=ELA][POSS=PL1][BOUNDARY=LEXITEM][CASECHANGE=NONE]'
-    a2 = u'[BOUNDARY=LEXITEM][LEMMA=\'lammas\'][POS=NOUN][KTN=41][KAV=H][NUM=PL][CASE=PAR][ALLO=IA][BOUNDARY=LEXITEM][CASECHANGE=NONE]'
-    a3 = u'[BOUNDARY=LEXITEM][LEMMA=\'kuka\'][POS=PRONOUN][SUBCAT=INTERROG][NUM=SG][CASE=GEN][BOUNDARY=LEXITEM][CASECHANGE=NONE]'    
-    w = [u'hyppiä',u'koiraa', u'keltaisia', u'hypitkö']
-    #print(get_analysis(w[0]))
-    #print generate_word(a3)      
-    #print get_POS_list(w)
-    #print get_inflection(u'kameleontillammekaan', u'karhu')
     print get_inflection(u'lampaallenikaan', u'kääpiösnautseri')
-    #print change_allo_tag(a2)    
+
 
 # (1): takes a list of words, gives pos tags
 def get_POS_list(word_list):
